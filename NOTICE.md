@@ -1,15 +1,10 @@
 # Source note
 
-This **public** repo holds user-facing docs and the stable release surface for **Niplex Harness**.
+**Public repo:** https://github.com/Aj-Niplex/NiPlex-Harness  
+**Dev repo:** https://github.com/Aj-Niplex/dev-NiPlex-Harness
 
-Full development history and agent handover notes live in the **dev** repository:
+This public repo is the user-facing release surface (docs + stable code).
 
-- Dev: https://github.com/Aj-Niplex/Niplex-Harness  
-  (may be renamed to `dev-Niplex-Harness`)
+Development and `AI-handover/` live only in **dev-NiPlex-Harness**.
 
-To ship a code release:
-1. Stabilize features in the dev repo  
-2. Copy the clean package tree here (exclude `AI-handover/`, secrets, personal vault notes)  
-3. Tag a version on this public repo  
-
-Until the first full code mirror is finished, treat **dev** as the source of truth for Python modules and this repo as the **docs + packaging front door**.
+To ship a code release: stabilize in dev → copy clean tree here (no handover, no secrets) → tag.
