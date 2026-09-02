@@ -1,108 +1,38 @@
-# Niplex Harness
+# NiPlex Harness
 
-**NiPlex Agent** — a personal AI agent harness you control from **Discord** or **Telegram**.
+**NiPlex Agent** — personal AI agent harness controlled from **Discord** or **Telegram**.
 
-Built for people who run agents on free hosts (e.g. HidenCloud) **without a PC** — your phone is the control panel.
+Built for people on free hosts (e.g. HidenCloud) **without a PC** — phone is the control panel.
+
+**Dev / experiments:** [dev-NiPlex-Harness](https://github.com/Aj-Niplex/dev-NiPlex-Harness)
 
 ---
 
 ## What you get
 
-- **Gateway:** Discord (recommended) or Telegram  
-- **Setup in chat:** `/setup` picks provider → API key → models from the API  
-- **Sandbox:** built-in Python runner with **approval buttons** for risky code  
-- **Vault:** `vault/` folder of plain Markdown — open it in **Obsidian**  
-- **Tools:** memory, files, skills, web search, terminal, cron/sub-agent stubs  
-- **Privacy:** allow-list user IDs; optional GitHub issue reports are **off** by default  
-
-Identity is branded **NiPlex Agent / Niplex Harness** (hardcoded).
+- Discord (recommended) or Telegram gateway  
+- `/setup` — provider → API key → models from API  
+- Built-in Python sandbox + **approval buttons**  
+- `vault/` — Obsidian-ready Markdown  
+- Memory, files, skills, web search, terminal  
+- Allow-list only; GitHub crash reports **off** by default  
 
 ---
 
 ## 5-minute start
 
-### 1. Get a bot token
-- **Discord:** [Discord Developer Portal](https://discord.com/developers/applications) → Bot → token. Enable **Message Content Intent**. Invite bot with message permissions.  
-- **Telegram:** talk to [@BotFather](https://t.me/BotFather) → `/newbot`.
+1. Create a Discord or Telegram bot token  
+2. Copy `.env.example` → `.env` and set token + your user id  
+3. `pip install -r requirements.txt` && `python launch.py`  
+4. In chat: **`/setup`** then **`/help`**
 
-### 2. Get your user ID
-- Discord: Settings → Advanced → Developer Mode → right-click yourself → Copy User ID  
-- Telegram: use a bot like `@userinfobot`
-
-### 3. Configure
-
-```bash
-cp .env.example .env
-```
-
-Minimal `.env`:
-
-```env
-GATEWAY=discord
-DISCORD_BOT_TOKEN=your_token
-ALLOWED_DISCORD_IDS=123456789012345678
-REQUIRE_ALLOWLIST=true
-```
-
-(For Telegram: `GATEWAY=telegram`, `TELEGRAM_BOT_TOKEN`, `ALLOWED_TELEGRAM_IDS`.)
-
-### 4. Run
-
-```bash
-pip install -r requirements.txt
-python launch.py
-```
-
-### 5. In chat
-
-```
-/setup
-```
-
-Choose provider (Agnes / Google / OpenAI / Anthropic / OpenRouter / custom) → send API key → pick a model or type `random`.
-
-Then say hello. Use **`/help`** anytime.
-
-Full guide: [docs/HELP.md](docs/HELP.md) · [docs/SETUP.md](docs/SETUP.md)
+Full guides: [docs/HELP.md](docs/HELP.md) · [docs/SETUP.md](docs/SETUP.md)
 
 ---
 
-## Approval buttons
+## HidenCloud
 
-Risky terminal actions show:
-
-| Button | Meaning |
-|--------|---------|
-| Allow Once | Run this time only |
-| Allow Session | Auto-allow for this session |
-| Always Allow | Only **this exact command text** is free later |
-| Deny | Cancel |
-
----
-
-## HidenCloud (free Python)
-
-1. Create a Python server  
-2. Upload this repo  
-3. Put `.env` in the root  
-4. Startup command: `python launch.py`  
-5. Open Discord/Telegram → `/setup`
-
----
-
-## Security notes
-
-- The agent **cannot** write files on the project root (must create a folder first).  
-- Core harness paths cannot be deleted by tools.  
-- Prefer notes under `vault/`.  
-- Do not commit `.env` or `data/runtime_provider.json`.
-
----
-
-## Dev vs public
-
-- **Public (this repo):** stable docs + code for users  
-- **Dev:** `Aj-Niplex/Niplex-Harness` (experiments; may be renamed `dev-Niplex-Harness`)
+Python server → upload repo → `.env` → start: `python launch.py` → `/setup` in Discord/Telegram.
 
 ---
 
