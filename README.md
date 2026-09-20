@@ -4,7 +4,7 @@
 
 Built for people on free hosts (e.g. HidenCloud) **without a PC** — phone is the control panel.
 
-**Dev / experiments:** [dev-NiPlex-Harness](https://github.com/Aj-Niplex/dev-NiPlex-Harness)
+**Dev / private experiments:** [dev-Niplex-Harness](https://github.com/Aj-Niplex/dev-Niplex-Harness) (private)
 
 ---
 
@@ -30,10 +30,21 @@ Full guides: [docs/HELP.md](docs/HELP.md) · [docs/SETUP.md](docs/SETUP.md)
 
 ---
 
-## HidenCloud
+## HidenCloud / free hosts
 
 Python server → upload repo → `.env` → start: `python launch.py` → `/setup` in Discord/Telegram.
 
 ---
 
-Built for Adarsh · Powered by **Niplex Harness**
+## Source of truth
+
+| Role | Repo |
+|------|------|
+| **Public (this repo)** | Docs + cleaned source ready for users / future PyPI |
+| **Private dev** | Full source + AI-handover + experiments |
+
+Private data, AI agent notes, and internal tooling stay only in the private repo.
+
+---
+
+Built for Adarsh · Powered by **NiPlex Harness**
