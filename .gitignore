@@ -1,4 +1,5 @@
 .env
+mcp/.env
 .deps_installed
 __pycache__/
 *.pyc
